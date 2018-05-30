@@ -1,0 +1,19 @@
+{
+    "elements": {
+        "inputtype=\"submit\"": {}
+    },
+    "attributes": {
+        "th:text": {
+            "context": "span"
+        },
+        "th:action": {
+            "context": "form"
+        },
+        "th:each": {
+            "context": "tbody"
+        },
+        "th:field": {
+            "context": "input"
+        }
+    }
+}
