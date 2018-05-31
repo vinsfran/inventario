@@ -14,11 +14,14 @@ import py.gov.asuncion.inventario.entity.Course;
  */
 public interface CourseService {
 
-    public abstract List<Course> listAllCourses();
+    public abstract List<Course> listAll();
 
-    public abstract Course addCourse(Course course);
+    public abstract Course findById(int id);
 
-    public abstract int removeCourse(int id);
+    public abstract Course add(Course course);
 
-    public abstract Course updateCourse(Course course);
+    public abstract Course update(Course course);
+
+    public abstract int remove(int id);
+
 }

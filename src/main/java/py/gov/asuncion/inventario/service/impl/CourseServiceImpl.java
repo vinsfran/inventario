@@ -29,27 +29,32 @@ public class CourseServiceImpl implements CourseService {
     private CourseJpaRepository courseJpaRepository;
 
     @Override
-    public List<Course> listAllCourses() {
+    public List<Course> listAll() {
         LOG.info("Call: listAllCourses()");
-        return courseJpaRepository.findAll();
+        return courseJpaRepository.findByOrderByIdAsc();
     }
 
     @Override
-    public Course addCourse(Course course) {
+    public Course findById(int id) {
+        return courseJpaRepository.findById(id);
+    }
+
+    @Override
+    public Course add(Course course) {
         LOG.info("Call: addCourse()");
         //Guarda el objeto recibido y luego retorna el objeto guardado
         return courseJpaRepository.save(course);
     }
 
     @Override
-    public int removeCourse(int id) {
-        courseJpaRepository.deleteById(id);
-        return 0;
+    public Course update(Course course) {
+        return courseJpaRepository.save(course);
     }
 
     @Override
-    public Course updateCourse(Course course) {
-        return courseJpaRepository.save(course);
+    public int remove(int id) {
+        courseJpaRepository.deleteById(id);
+        return 0;
     }
 
 }

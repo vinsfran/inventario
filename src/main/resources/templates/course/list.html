@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default">
+
+    <head>
+        <title>Courses</title>
+    </head>
+
+    <body>
+        <div layout:fragment="content">
+            <div class="row">
+                <div>
+                    <a href="#" th:href="@{'form'}" class="todo-list">
+                        <button class="btn btn-primary small pull-right" 
+                                style="margin-right: 16px" type="submit">
+                            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true">Nuevo</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <br/>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Hours</th>
+                    </tr>
+                </thead>
+                <tbody th:each="course : ${courses}">
+                    <tr>
+                        <th scope="row" th:text="${course.id}">1</th>
+                        <td th:text="${course.name}">NAME</td>
+                        <td th:text="${course.description}">DESCRIPTION</td>
+                        <td th:text="${course.price}">PRICE</td>
+                        <td><span th:text="${course.hours}">HOURS</span></td>
+
+                        <td>
+                            <div class="pull-left">
+                                <a href="#" th:href="@{'form?id=' + ${course.id}}" style="padding: 5px">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true">Modificar</span>
+                                    </button>
+                                </a>
+                                <a href="remove?id={{lugar.id}}" style="padding: 5px">
+                                    <button type="button" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true">Eliminar</span>
+                                    </button>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
