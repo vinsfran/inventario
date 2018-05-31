@@ -5,7 +5,6 @@
  */
 package py.gov.asuncion.inventario.controller;
 
-import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,9 +30,9 @@ public class CourseController {
 
     private static final Log LOG = LogFactory.getLog(CourseController.class);
 
-    public static final String DIR_COURSE = "course/";
-    public static final String LIST_VIEW = DIR_COURSE + "list";
-    public static final String FORM_VIEW = DIR_COURSE + "form";
+    public static final String DIR_VIEW = "course/";
+    public static final String LIST_VIEW = DIR_VIEW + "list";
+    public static final String FORM_VIEW = DIR_VIEW + "form";
 
     @Autowired
     @Qualifier("courseServiceImpl")
@@ -44,7 +42,6 @@ public class CourseController {
     public ModelAndView listAllCourses() {
         LOG.info("Call: listAllCourses()");
         ModelAndView mav = new ModelAndView(LIST_VIEW);
-        mav.addObject("course", new Course());
         mav.addObject("courses", courseService.listAll());
         return mav;
     }

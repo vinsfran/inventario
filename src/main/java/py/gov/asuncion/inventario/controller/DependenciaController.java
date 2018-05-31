@@ -28,17 +28,18 @@ public class DependenciaController {
 
     private static final Log LOG = LogFactory.getLog(DependenciaController.class);
 
-    public static final String VIEW = "dependencia";
+    public static final String DIR_VIEW = "dependencia/";
+    public static final String LIST_VIEW = DIR_VIEW + "list";
+    public static final String FORM_VIEW = DIR_VIEW + "form";
 
     @Autowired
     @Qualifier("dependenciaServiceImpl")
     private DependenciaService dependenciaService;
 
-    @GetMapping("/list")
+    @GetMapping("/")
     public ModelAndView listAll() {
         LOG.info("Call: listAll()");
-        ModelAndView mav = new ModelAndView(VIEW);
-        //mav.addObject("course", new Dependencia());
+        ModelAndView mav = new ModelAndView(LIST_VIEW);
         mav.addObject("dependencias", dependenciaService.listAll());
         return mav;
     }
