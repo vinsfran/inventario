@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default">
+
+    <head>
+        <title>Almacen</title>
+    </head>
+
+    <body>
+        <div layout:fragment="content">
+            <div class="row">
+                <div>
+                    <a href="#" th:href="@{'form'}" class="todo-list">
+                        <button class="btn btn-primary small pull-right" 
+                                style="margin-right: 16px" type="submit">
+                            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true">Nuevo</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <br/>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Descripción</th>
+                    </tr>
+                </thead>
+                <tbody th:each="almacen : ${almacenes}">
+                    <tr>
+                        <th scope="row" th:text="${almacen.idalmacen}">1</th>
+                        <td th:text="${almacen.almacenDescp}">Descri</td>
+
+                        <td>
+                            <div class="pull-left">
+                                <a href="#" th:href="@{'form?id=' + ${almacen.idalmacen}}" style="padding: 5px">
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true">Modificar</span>
+                                    </button>
+                                </a>
+                                <a href="remove?id={{lugar.id}}" style="padding: 5px">
+                                    <button type="button" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true">Eliminar</span>
+                                    </button>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
