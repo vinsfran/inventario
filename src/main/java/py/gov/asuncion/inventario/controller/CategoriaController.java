@@ -41,7 +41,6 @@ public class CategoriaController {
 
     @GetMapping("/")
     public ModelAndView listAll() {
-        LOG.info("Call: listAll()");
         ModelAndView mav = new ModelAndView(LIST_VIEW);
         mav.addObject("categorias", categoriaService.listAll());
         return mav;
@@ -49,7 +48,7 @@ public class CategoriaController {
 
     @GetMapping("/form")
     public String form(@RequestParam(name = "id", required = false, defaultValue = "0") int id, Model model) {
-        LOG.info("Call: form()" + " -- RequestParam: " + id);
+//        LOG.info("Call: form()" + " -- RequestParam: " + id);
         Categoria categoria = new Categoria();
         if (id != 0) {
             categoria = categoriaService.findById(id);

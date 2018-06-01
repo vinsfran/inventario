@@ -38,6 +38,13 @@ public class CourseController {
     @Qualifier("courseServiceImpl")
     private CourseService courseService;
 
+    @GetMapping("/index")
+    public ModelAndView index() {
+        LOG.info("Call: index()");
+        ModelAndView mav = new ModelAndView("course/index");
+        return mav;
+    }
+
     @GetMapping("/")
     public ModelAndView listAllCourses() {
         LOG.info("Call: listAllCourses()");

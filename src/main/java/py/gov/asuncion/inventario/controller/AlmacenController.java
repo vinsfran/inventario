@@ -21,8 +21,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import static py.gov.asuncion.inventario.controller.AlmacenController.FORM_VIEW;
 import py.gov.asuncion.inventario.entity.Almacen;
-import py.gov.asuncion.inventario.entity.Almacen;
-import py.gov.asuncion.inventario.entity.Almacen;
 import py.gov.asuncion.inventario.service.AlmacenService;
 
 /**

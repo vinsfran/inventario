@@ -30,13 +30,13 @@ public class CategoriaServiceImpl implements CategoriaService {
 
     @Override
     public List<Categoria> listAll() {
-        LOG.info("Call: listAllCategoria()");
+        LOG.info("Call: listAll()");
         return categoriaJpaRepository.findAll();
     }
 
     @Override
     public Categoria add(Categoria categoria) {
-        LOG.info("Call: addCategoria()");
+        LOG.info("Call: add()");
         //Guarda el objeto recibido y luego retorna el objeto guardado
         return categoriaJpaRepository.save(categoria);
     }
