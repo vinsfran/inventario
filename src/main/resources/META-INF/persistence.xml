@@ -4,6 +4,7 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>py.gov.asuncion.inventario.entity.Dependencia</class>
     <class>py.gov.asuncion.inventario.entity.Categorias</class>
+    <class>py.gov.asuncion.inventario.entity.Proveedor</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ateneadev.asuncion.gov.py:5432/inventario"/>
       <property name="javax.persistence.jdbc.user" value="inventario"/>
