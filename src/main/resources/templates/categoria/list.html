@@ -25,17 +25,17 @@
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Descripción</th>
+                        <th scope="col">Nombre</th>
                     </tr>
                 </thead>
                 <tbody th:each="categoria : ${categorias}">
                     <tr>
-                        <th scope="row" th:text="${categoria.pkIdcategoria}">1</th>
-                        <td th:text="${categoria.descripcion}">Descri</td>
+                        <th scope="row" th:text="${categoria.id}">1</th>
+                        <td th:text="${categoria.nombre}">Descri</td>
 
                         <td>
                             <div class="pull-left">
-                                <a href="#" th:href="@{'form?id=' + ${categoria.pkIdcategoria}}" style="padding: 5px">
+                                <a href="#" th:href="@{'form?id=' + ${categoria.id}}" style="padding: 5px">
                                     <button type="button" class="btn btn-default">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true">Modificar</span>
                                     </button>

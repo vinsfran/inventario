@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import static py.gov.asuncion.inventario.controller.CategoriaController.FORM_VIEW;
-import py.gov.asuncion.inventario.entity.Categorias;
+import py.gov.asuncion.inventario.entity.Categoria;
 import py.gov.asuncion.inventario.service.CategoriaService;
 
 /**
@@ -50,7 +50,7 @@ public class CategoriaController {
     @GetMapping("/form")
     public String form(@RequestParam(name = "id", required = false, defaultValue = "0") int id, Model model) {
         LOG.info("Call: form()" + " -- RequestParam: " + id);
-        Categorias categoria = new Categorias();
+        Categoria categoria = new Categoria();
         if (id != 0) {
             categoria = categoriaService.findById(id);
         }
@@ -59,7 +59,7 @@ public class CategoriaController {
     }
 
     @PostMapping("/")
-    public String add(@ModelAttribute("categoria") Categorias categoria) {
+    public String add(@ModelAttribute("categoria") Categoria categoria) {
         LOG.info("Call: addCategoria()" + " -- Param: " + categoria.toString());
         categoriaService.add(categoria);
         return "redirect:/categoria/";

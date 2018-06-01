@@ -5,6 +5,8 @@
  */
 package py.gov.asuncion.inventario.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +55,7 @@ public class AlmacenController {
     public String form(@RequestParam(name = "id", required = false, defaultValue = "0") int id, Model model) {
         LOG.info("Call: form()" + " -- RequestParam: " + id);
         Almacen almacen = new Almacen();
+        List<Almacen> almacenes = new ArrayList();
         if (id != 0) {
             almacen = almacenService.findById(id);
         }

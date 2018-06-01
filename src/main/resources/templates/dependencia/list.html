@@ -25,17 +25,17 @@
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Descripción</th>
+                        <th scope="col">Nombre</th>
                     </tr>
                 </thead>
                 <tbody th:each="dependencia : ${dependencias}">
                     <tr>
-                        <th scope="row" th:text="${dependencia.iddependencia}">1</th>
-                        <td th:text="${dependencia.descripDireccion}">Descri</td>
+                        <th scope="row" th:text="${dependencia.id}">id</th>
+                        <td th:text="${dependencia.nombre}">Nombre</td>
 
                         <td>
                             <div class="pull-left">
-                                <a href="#" th:href="@{'form?id=' + ${dependencia.iddependencia}}" style="padding: 5px">
+                                <a href="#" th:href="@{'form?id=' + ${dependencia.id}}" style="padding: 5px">
                                     <button type="button" class="btn btn-default">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true">Modificar</span>
                                     </button>

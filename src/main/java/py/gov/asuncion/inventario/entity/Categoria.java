@@ -21,8 +21,8 @@ import javax.validation.constraints.Size;
  * @author vinsfran
  */
 @Entity
-@Table(name = "almacen")
-public class Almacen implements Serializable {
+@Table(name = "categoria")
+public class Categoria implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -32,18 +32,18 @@ public class Almacen implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 15)
+    @Size(min = 1, max = 20)
     @Column(name = "nombre")
     private String nombre;
 
-    public Almacen() {
+    public Categoria() {
     }
 
-    public Almacen(Integer id) {
+    public Categoria(Integer id) {
         this.id = id;
     }
 
-    public Almacen(Integer id, String nombre) {
+    public Categoria(Integer id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
@@ -66,7 +66,7 @@ public class Almacen implements Serializable {
 
     @Override
     public String toString() {
-        return "py.gov.asuncion.inventario.entity.Almacen[ id=" + id + " ]";
+        return "py.gov.asuncion.inventario.entity.Categoria[ id=" + id + " ]";
     }
     
 }

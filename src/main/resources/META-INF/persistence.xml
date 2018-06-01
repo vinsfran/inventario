@@ -3,8 +3,18 @@
   <persistence-unit name="py.gov.asuncion_inventario_jar_0.0.1-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>py.gov.asuncion.inventario.entity.Dependencia</class>
-    <class>py.gov.asuncion.inventario.entity.Categorias</class>
+    <class>py.gov.asuncion.inventario.entity.AntecEntrada</class>
+    <class>py.gov.asuncion.inventario.entity.Material</class>
+    <class>py.gov.asuncion.inventario.entity.DescripMotivos</class>
     <class>py.gov.asuncion.inventario.entity.Proveedor</class>
+    <class>py.gov.asuncion.inventario.entity.Categorias</class>
+    <class>py.gov.asuncion.inventario.entity.Usuario</class>
+    <class>py.gov.asuncion.inventario.entity.Course</class>
+    <class>py.gov.asuncion.inventario.entity.AntecSalida</class>
+    <class>py.gov.asuncion.inventario.entity.Ajuste</class>
+    <class>py.gov.asuncion.inventario.entity.Almacen</class>
+    <class>py.gov.asuncion.inventario.entity.DetalleMovimiento</class>
+    <class>py.gov.asuncion.inventario.entity.Categoria</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ateneadev.asuncion.gov.py:5432/inventario"/>
       <property name="javax.persistence.jdbc.user" value="inventario"/>

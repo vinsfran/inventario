@@ -6,7 +6,7 @@
 package py.gov.asuncion.inventario.service;
 
 import java.util.List;
-import py.gov.asuncion.inventario.entity.Categorias;
+import py.gov.asuncion.inventario.entity.Categoria;
 
 /**
  *
@@ -14,13 +14,13 @@ import py.gov.asuncion.inventario.entity.Categorias;
  */
 public interface CategoriaService {
 
-    public abstract List<Categorias> listAll();
+    public abstract List<Categoria> listAll();
     
-    public abstract Categorias findById(int id);
+    public abstract Categoria findById(int id);
 
-    public abstract Categorias add(Categorias course);
+    public abstract Categoria add(Categoria categoria);
 
     public abstract int remove(int id);
 
-    public abstract Categorias update(Categorias course);
+    public abstract Categoria update(Categoria categoria);
 }

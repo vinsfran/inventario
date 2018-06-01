@@ -5,12 +5,15 @@
  */
 package py.gov.asuncion.inventario.entity;
 
+import java.io.Serializable;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -18,46 +21,38 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "course")
-public class Course {
+public class Course implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
     @Column(name = "id")
-    private int id;
-    @Column(name = "name")
-    private String name;
+    private Integer id;
+    @Size(max = 255)
     @Column(name = "description")
     private String description;
-    @Column(name = "price")
-    private int price;
     @Column(name = "hours")
-    private int hours;
+    private Integer hours;
+    @Size(max = 255)
+    @Column(name = "name")
+    private String name;
+    @Column(name = "price")
+    private Integer price;
 
     public Course() {
     }
 
-    public Course(int id, String name, String description, int price, int hours) {
+    public Course(Integer id) {
         this.id = id;
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.hours = hours;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {
@@ -68,25 +63,33 @@ public class Course {
         this.description = description;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getHours() {
+    public Integer getHours() {
         return hours;
     }
 
-    public void setHours(int hours) {
+    public void setHours(Integer hours) {
         this.hours = hours;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return "Course{" + "id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", hours=" + hours + '}';
+        return "py.gov.asuncion.inventario.entity.Course[ id=" + id + " ]";
     }
-
+    
 }

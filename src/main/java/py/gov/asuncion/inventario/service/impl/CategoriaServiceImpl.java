@@ -11,7 +11,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import py.gov.asuncion.inventario.entity.Categorias;
+import py.gov.asuncion.inventario.entity.Categoria;
 import py.gov.asuncion.inventario.service.CategoriaService;
 import py.gov.asuncion.inventario.repository.CategoriaJpaRepository;
 
@@ -29,14 +29,14 @@ public class CategoriaServiceImpl implements CategoriaService {
     private CategoriaJpaRepository categoriaJpaRepository;
 
     @Override
-    public List<Categorias> listAll() {
-        LOG.info("Call: listAllCategorias()");
+    public List<Categoria> listAll() {
+        LOG.info("Call: listAllCategoria()");
         return categoriaJpaRepository.findAll();
     }
 
     @Override
-    public Categorias add(Categorias categoria) {
-        LOG.info("Call: addCategorias()");
+    public Categoria add(Categoria categoria) {
+        LOG.info("Call: addCategoria()");
         //Guarda el objeto recibido y luego retorna el objeto guardado
         return categoriaJpaRepository.save(categoria);
     }
@@ -48,13 +48,13 @@ public class CategoriaServiceImpl implements CategoriaService {
     }
 
     @Override
-    public Categorias update(Categorias categoria) {
+    public Categoria update(Categoria categoria) {
         return categoriaJpaRepository.save(categoria);
     }
 
     @Override
-    public Categorias findById(int id) {
-        return categoriaJpaRepository.findByPkIdcategoria(id);
+    public Categoria findById(int id) {
+        return categoriaJpaRepository.findById(id);
     }
 
 }

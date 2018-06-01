@@ -12,15 +12,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author cbaez
+ * @author vinsfran
  */
 @Entity
 @Table(name = "dependencia")
@@ -30,38 +27,38 @@ public class Dependencia implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "iddependencia")
-    private Integer iddependencia;
+    @Column(name = "id")
+    private Integer id;
     @Size(max = 50)
-    @Column(name = "descrip_direccion")
-    private String descripDireccion;
+    @Column(name = "nombre")
+    private String nombre;
 
     public Dependencia() {
     }
 
-    public Dependencia(Integer iddependencia) {
-        this.iddependencia = iddependencia;
+    public Dependencia(Integer id) {
+        this.id = id;
     }
 
-    public Integer getIddependencia() {
-        return iddependencia;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIddependencia(Integer iddependencia) {
-        this.iddependencia = iddependencia;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getDescripDireccion() {
-        return descripDireccion;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setDescripDireccion(String descripDireccion) {
-        this.descripDireccion = descripDireccion;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     @Override
     public String toString() {
-        return "py.gov.asuncion.inventario.entity.Dependencia[ iddependencia=" + iddependencia + " ]";
+        return "py.gov.asuncion.inventario.entity.Dependencia[ id=" + id + " ]";
     }
     
 }

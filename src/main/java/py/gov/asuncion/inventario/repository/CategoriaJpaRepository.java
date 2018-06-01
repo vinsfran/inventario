@@ -8,7 +8,7 @@ package py.gov.asuncion.inventario.repository;
 import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import py.gov.asuncion.inventario.entity.Categorias;
+import py.gov.asuncion.inventario.entity.Categoria;
 
 
 /**
@@ -16,8 +16,8 @@ import py.gov.asuncion.inventario.entity.Categorias;
  * @author vinsfran
  */
 @Repository("categoriaJpaRepository")
-public interface CategoriaJpaRepository extends JpaRepository<Categorias, Serializable> {
+public interface CategoriaJpaRepository extends JpaRepository<Categoria, Serializable> {
 
-    public abstract Categorias findByPkIdcategoria(int id);
+    public abstract Categoria findById(int id);
     
 }
