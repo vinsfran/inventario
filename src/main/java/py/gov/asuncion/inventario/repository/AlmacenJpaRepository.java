@@ -18,6 +18,6 @@ import py.gov.asuncion.inventario.entity.Almacen;
 @Repository("almacenJpaRepository")
 public interface AlmacenJpaRepository extends JpaRepository<Almacen, Serializable> {
 
-    public abstract Almacen findByIdalmacen(int id);
+    public abstract Almacen findById(int id);
     
 }

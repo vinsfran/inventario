@@ -52,4 +52,9 @@ public class DependenciaServiceImpl implements DependenciaService {
         return dependenciaJpaRepository.save(course);
     }
 
+    @Override
+    public Dependencia findById(int id) {
+        return dependenciaJpaRepository.findById(id);
+    }
+
 }

@@ -54,7 +54,7 @@ public class AlmacenServiceImpl implements AlmacenService {
 
     @Override
     public Almacen findById(int id) {
-        return almacenJpaRepository.findByIdalmacen(id);
+        return almacenJpaRepository.findById(id);
     }
 
 }

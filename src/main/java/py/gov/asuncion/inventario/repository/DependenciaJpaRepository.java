@@ -6,7 +6,6 @@
 package py.gov.asuncion.inventario.repository;
 
 import java.io.Serializable;
-import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import py.gov.asuncion.inventario.entity.Dependencia;
@@ -18,5 +17,6 @@ import py.gov.asuncion.inventario.entity.Dependencia;
 @Repository("dependenciaJpaRepository")
 public interface DependenciaJpaRepository extends JpaRepository<Dependencia, Serializable> {
 
-    
+        public abstract Dependencia findById(int id);
+
 }

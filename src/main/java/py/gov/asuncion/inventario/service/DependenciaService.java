@@ -21,4 +21,6 @@ public interface DependenciaService {
     public abstract int remove(int id);
 
     public abstract Dependencia update(Dependencia course);
+    
+    public abstract Dependencia findById(int id);
 }
